@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Enviroment>
+    <!-- General -->
+    <WaitTime>3</WaitTime>
+    <ScreenshotPath>./../allure-screen-shots/</ScreenshotPath>
+
+    <!-- Web -->
+    <Browser>chrome</Browser>
+    <Url>https://atid.store/store/</Url>
+    <ProductName>shoes</ProductName>
+    <ExpectedResults>Showing all 5 results</ExpectedResults>
+    <ProductTitle>ATID Green Shoes</ProductTitle>
+    <CartMessage>VIEW CART
+“ATID Green Shoes” has been added to your cart.</CartMessage>
+    <ItemQuantity>1</ItemQuantity>
+    <ItemPrice>110.00 ₪</ItemPrice>
+</Enviroment>
