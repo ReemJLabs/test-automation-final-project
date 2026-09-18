@@ -1,0 +1,9 @@
+# Install when working on mobile / electron automation (Selenium 3):
+#   pip install -r mobile-requirements.txt
+#
+# Switch back to web with:
+#   pip install -r requirements.txt
+#
+# Appium 2.x requires Selenium 4. Use Appium 1.x with Selenium 3.141.
+selenium==3.141.0
+Appium-Python-Client==1.3.0

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Enviroment>
+    <!-- General -->
+    <WaitTime>15</WaitTime>
+    <ScreenshotPath>./../allure-screen-shots/</ScreenshotPath>
+
+    <!-- Web & API -->
+    <Browser>chrome</Browser>
+    <Url>https://atid.store/store/</Url>
+    <ProductName>shoes</ProductName>
+    <ExpectedResults>Showing all 5 results</ExpectedResults>
+    <ProductTitle>ATID Green Shoes</ProductTitle>
+    <CartMessage>VIEW CART
+“ATID Green Shoes” has been added to your cart.</CartMessage>
+    <ItemQuantity>1</ItemQuantity>
+    <ItemPrice>110.00 ₪</ItemPrice>
+    <ApiUrl>http://localhost:3000/</ApiUrl>
+    <UserName>admin</UserName>
+    <Password>admin</Password>
+
+
+    <!-- Mobile -->
+    <Mobile_Device>Android</Mobile_Device>
+    <Udid>ce0718277da2a60c04</Udid>
+    <App_Package>com.shivgadhia.android.ukMortgageCalc</App_Package>
+    <App_Activity>.MainActivity</App_Activity>
+    <Bundle_ID>com.shivadhia.ukMortgageCalc</Bundle_ID>
+    <Appium_Server>http://localhost:4730/wd/hub</Appium_Server>
+    <Swipe_Duration>200</Swipe_Duration>
+
+    <!-- Electron -->
+    <Electron_App>C:/Users/Reem/AppData/Local/Programs/todolist/Todolist.exe</Electron_App>
+    <Electron_Driver>C:/Users/Reem/Desktop/AutomationCourse/Electron/electrondriver.exe</Electron_Driver>
+
+    <!-- Desktop -->
+    <Application_Name>Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</Application_Name>
+    <WinAppDriver_Service>http://127.0.0.1:4723</WinAppDriver_Service>
+
+
+     <!-- DataBase -->
+    <!-- Pooler host is used because db.<ref>.supabase.co resolves to IPv6 only -->
+    <DB_Host>aws-0-eu-central-1.pooler.supabase.com</DB_Host>
+    <DB_Port>5432</DB_Port>
+    <DB_Name>postgres</DB_Name>
+    <!-- DB_User / DB_Pass are secrets: set them via DB_USER / DB_PASS in a local .env file (see .env.example) -->
+    <DB_User></DB_User>
+    <DB_Pass></DB_Pass>
+</Enviroment>
+
