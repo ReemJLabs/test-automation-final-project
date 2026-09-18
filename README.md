@@ -60,6 +60,7 @@ test_automation_final_project/
 │   ├── test_mobile.py
 │   ├── test_electron.py
 │   └── test_desktop.py
+├── .env.example                # Placeholder for DB_USER / DB_PASS (copy to .env locally)
 ├── requirements.txt            # Web / API / DB dependencies (Selenium 4)
 └── mobile-requirements.txt     # Mobile / Electron / Desktop overlay (Selenium 3 + Appium 1.x)
 ```
@@ -78,6 +79,7 @@ test_automation_final_project/
 
 ### Data & Integrations
 - **psycopg2-binary 2.9.12** — PostgreSQL connection for the DB-driven web test
+- **python-dotenv 1.2.1** — loads local `.env` values for database credentials
 - **requests 2.32.5** — HTTP client for the Grafana API tests
 
 ### Browser/Driver Management
@@ -102,7 +104,19 @@ test_automation_final_project/
 python -m venv .venv
 .venv\Scripts\activate        # Windows
 pip install -r requirements.txt
+copy .env.example .env        # then fill in DB_USER and DB_PASS
 ```
+
+### Database credentials
+
+`DB_User` and `DB_Pass` are not stored in `data.xml`. Copy `.env.example` to `.env` in the project root and set:
+
+```
+DB_USER=
+DB_PASS=
+```
+
+`.env` is gitignored and stays on your machine. The DB tests read these values through `get_data`.
 
 ### Two requirements files
 
@@ -118,9 +132,9 @@ pip install -r mobile-requirements.txt
 
 ## Configuration
 
-All runtime settings are in [`configuration/data.xml`](configuration/data.xml): wait times, screenshot path, browser choice, store URL/test data, Grafana API credentials, mobile device/app IDs, Electron app paths, WinAppDriver settings, and DB connection details.
+Non-secret runtime settings are in [`configuration/data.xml`](configuration/data.xml): wait times, screenshot path, browser choice, store URL/test data, Grafana API credentials, mobile device/app IDs, Electron app paths, WinAppDriver settings, and DB host/port/name.
 
-> Note: `configuration/data.xml` is currently read via a hardcoded absolute path in `utilities/common_ops.get_data`, and the Electron app paths in `data.xml` are also machine-specific. Update these if running on a different machine.
+`get_data` loads that XML using a path relative to the project, so it works from any working directory. Database username and password come from `.env` (see Setup). Electron app paths in `data.xml` are still machine-specific and need updating on another PC.
 
 ## Running Tests
 
